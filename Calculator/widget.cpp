@@ -84,6 +84,15 @@ void Widget::onClicked()
         showResult();
     }
 
+    if (ui->comboBox->currentText() == "ctg")
+    {
+        double addendum2;
+        addendum2 = ui->lineEdit_2->text().toDouble();
+
+        result = 1/tan(addendum2);
+        showResult();
+    }
+
     if (ui->comboBox->currentText() == "^")
     {
         double addendum1, addendum2;
