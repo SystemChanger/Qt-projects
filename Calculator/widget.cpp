@@ -17,99 +17,84 @@ Widget::~Widget()
 
 void Widget::onClicked()
 {
-    if (ui->comboBox->currentText() == "+")
+    switch ( ui->comboBox->currentText().toStdString()[0] )
     {
         double addendum1, addendum2;
-        addendum1 = ui->lineEdit->text().toDouble();
-        addendum2 = ui->lineEdit_2->text().toDouble();
 
-        result = addendum1 + addendum2;
-        showResult();
-    }
+        case '+':
+            addendum1 = ui->lineEdit->text().toDouble();
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "-")
-    {
-        double addendum1, addendum2;
-        addendum1 = ui->lineEdit->text().toDouble();
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = addendum1 + addendum2;
+            showResult();
+            break;
 
-        result = addendum1 - addendum2;
-        showResult();
-    }
+        case '-':
+            addendum1 = ui->lineEdit->text().toDouble();
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "*")
-    {
-        double addendum1, addendum2;
-        addendum1 = ui->lineEdit->text().toDouble();
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = addendum1 - addendum2;
+            showResult();
+            break;
 
-        result = addendum1 * addendum2;
-        showResult();
-    }
+        case '*':
+            addendum1 = ui->lineEdit->text().toDouble();
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "/")
-    {
-        double addendum1, addendum2;
-        addendum1 = ui->lineEdit->text().toDouble();
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = addendum1 * addendum2;
+            showResult();
+            break;
 
-        result = addendum1 / addendum2;
-        showResult();
-    }
+        case '/':
+            addendum1 = ui->lineEdit->text().toDouble();
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "sin")
-    {
-        double addendum2;
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = addendum1 / addendum2;
+            showResult();
+            break;
 
-        result = sin(addendum2);
-        showResult();
-    }
+        case 's':
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "cos")
-    {
-        double addendum2;
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = sin(addendum2);
+            showResult();
+            break;
 
-        result = cos(addendum2);
-        showResult();
-    }
+        case 'c':
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "tg")
-    {
-        double addendum2;
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = cos(addendum2);
+            showResult();
+            break;
 
-        result = tan(addendum2);
-        showResult();
-    }
+        case 't':
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "ctg")
-    {
-        double addendum2;
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = tan(addendum2);
+            showResult();
+            break;
 
-        result = 1/tan(addendum2);
-        showResult();
-    }
+        case ' ':
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "^")
-    {
-        double addendum1, addendum2;
-        addendum1 = ui->lineEdit->text().toDouble();
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = 1/tan(addendum2);
+            showResult();
+            break;
 
-        result = pow(addendum1,addendum2);
-        showResult();
-    }
+        case '^':
+            addendum1 = ui->lineEdit->text().toDouble();
+            addendum2 = ui->lineEdit_2->text().toDouble();
 
-    if (ui->comboBox->currentText() == "√")
-    {
-        double addendum2;
-        addendum2 = ui->lineEdit_2->text().toDouble();
+            result = pow(addendum1,addendum2);
+            showResult();
+            break;
 
-        result = sqrt(addendum2);
-        showResult();
+        case 'V':
+            addendum2 = ui->lineEdit_2->text().toDouble();
+
+            result = sqrt(addendum2);
+            showResult();
+            break;
     }
 }
 

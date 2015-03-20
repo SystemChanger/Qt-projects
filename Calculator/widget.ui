@@ -59,7 +59,7 @@
    </item>
    <item>
     <property name="text">
-     <string>√</string>
+     <string>V````</string>
     </property>
    </item>
    <item>
@@ -79,7 +79,7 @@
    </item>
    <item>
     <property name="text">
-     <string>ctg</string>
+     <string> ctg</string>
     </property>
    </item>
   </widget>
