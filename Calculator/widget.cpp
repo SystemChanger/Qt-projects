@@ -8,6 +8,7 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->pushButton,SIGNAL(clicked()),this, SLOT(onClicked()));
+    ui->lineEdit->setFocus();
 }
 
 Widget::~Widget()
@@ -111,8 +112,10 @@ void Widget::on_comboBox_activated(int index)
     else
         ui->lineEdit->setEnabled(true);
 
-    ui->textBrowser->setText(" ");
+    if (ui->checkBox->checkState() == 2)
+       ui->lineEdit_2->setText("");
     ui->lineEdit_2->setFocus();
+    ui->textBrowser->setText("");
 }
 
 void Widget::on_lineEdit_cursorPositionChanged(int arg1, int arg2)
