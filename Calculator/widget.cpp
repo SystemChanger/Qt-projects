@@ -112,4 +112,10 @@ void Widget::on_comboBox_activated(int index)
         ui->lineEdit->setEnabled(true);
 
     ui->textBrowser->setText(" ");
+    ui->lineEdit_2->setFocus();
+}
+
+void Widget::on_lineEdit_cursorPositionChanged(int arg1, int arg2)
+{
+    ui->lineEdit_2->setText("");
 }

@@ -24,6 +24,7 @@ public slots:
     void showResult();
 private slots:
     void on_comboBox_activated(int index);
+    void on_lineEdit_cursorPositionChanged(int arg1, int arg2);
 };
 
 #endif // WIDGET_H
